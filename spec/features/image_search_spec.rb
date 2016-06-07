@@ -7,7 +7,7 @@ feature 'image search' do
 		click_link('Make meme')
 		fill_in('Search',with:'Dogs')
 		click_button('Search')
-		
+
 	end
 
 end

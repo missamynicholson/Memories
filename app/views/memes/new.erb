@@ -3,3 +3,9 @@
   <%= text_field_tag(:search) %>
   <%= submit_tag("Search") %>
 <% end %>
+<% if @images %>
+  <% @images.each do |image| %>
+    <% p image %>
+    <img src=<%=image%> >
+  <% end %>
+<% end %>
