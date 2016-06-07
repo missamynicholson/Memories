@@ -1,3 +1,6 @@
+
+require 'webmock/rspec'
+require 'json'
 require "rails_helper"
 
 ENV["RACK_ENV"]="test"

@@ -34,9 +34,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :test do
+  gem 'dotenv-rails', '~> 2.1.1'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'rspec-collection_matchers'
+  gem 'webmock'
   gem 'factory_girl_rails'
   gem 'rake'
   gem 'coveralls', require: false
@@ -55,3 +57,5 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+gem 'ConnectSDK', '~> 1.0.2.Beta'

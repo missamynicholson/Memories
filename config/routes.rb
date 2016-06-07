@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  root 'memes#index'
   devise_for :users, :controllers => {registrations: "registrations"}
   resources :memes
+  post 'memes/new' => 'memes#get_images'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  root to: "memes#index"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

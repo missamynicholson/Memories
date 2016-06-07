@@ -5,28 +5,9 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'web_helper.rb'
 require 'capybara/rails'
 
-module AuthHelpers
-  def log_in(user = {email: "amy@gmail.com", password: "testtest"})
-    visit("/")
-    click_link("Login")
-    fill_in("Email", with: user[:email])
-    fill_in("Password", with: user[:password])
-    click_button("Login")
-  end
-
-  def sign_up(username = "myUsername")
-    visit("/")
-    click_link("Sign up")
-    click_link("Sign up", match: :first)
-    fill_in("Username", with: username)
-    fill_in("Email", with: "test@example.com")
-    fill_in("Password", with: "testtest")
-    fill_in("Password confirmation", with: "testtest")
-    click_button("Sign up")
-  end
-end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -51,7 +32,6 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  config.include AuthHelpers, type: :feature
   config.include FactoryGirl::Syntax::Methods
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
