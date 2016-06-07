@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :test do
+  gem 'dotenv-rails', '~> 2.1.1'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'rspec-collection_matchers'
