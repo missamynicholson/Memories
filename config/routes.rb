@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  root 'memes#index'
+
+  resources :memes
+  post 'memes/new' => 'memes#get_images'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
