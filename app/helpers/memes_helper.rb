@@ -1,5 +1,4 @@
 module MemesHelper
-
 	def url_convert(string)
 		string.gsub(/ /,'%20')
 	end
@@ -21,5 +20,4 @@ module MemesHelper
 		response = JSON.parse(response.body)
 		response = response["images"].map{ |image| image["display_sizes"][0]["uri"]}
 	end
-
 end

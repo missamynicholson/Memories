@@ -22,5 +22,4 @@ class MemesController < ApplicationController
 		# render the images on the page for the user to choose
 		# choose image
 	end
-
 end

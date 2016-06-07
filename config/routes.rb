@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-
   root 'memes#index'
-
+  devise_for :users, :controllers => {registrations: "registrations"}
   resources :memes
   post 'memes/new' => 'memes#get_images'
 
