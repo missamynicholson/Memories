@@ -37,7 +37,7 @@ feature "login and logout" do
 
   feature "sign-up" do
     context "valid credentials" do
-      scenario "signs up with valid credentials" do
+      scenario "signs up successfully" do
         sign_up("whatwhat")
         expect(page).not_to have_link "Login"
         expect(page).to have_link "Logout"
@@ -74,7 +74,6 @@ feature "login and logout" do
         expect(page).to have_link "Login"
         expect(page).to have_content "Username has already been taken"
       end
-  end
-
+    end
   end
 end
