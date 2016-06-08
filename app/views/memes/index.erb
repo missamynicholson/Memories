@@ -1,1 +1,14 @@
 <%= link_to 'Make meme', new_meme_path %>
+
+<%= "http://mobiusmedia.co.uk/wp-content/uploads/2013/12/Google-Baby.jpg" %>
+
+
+<%= data = {:text => "bmw"} %>
+<%= data.to_json %>
+
+<form action="https://hooks.slack.com/services/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" method=POST>
+
+<input type="hidden" name='"text"' value="<%= data %>">
+
+<input type="submit" value="Memeorise!">
+</form>
