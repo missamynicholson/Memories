@@ -34,4 +34,9 @@ class MemesController < ApplicationController
 		end
 	end
 
+	def edit
+		@meme = Meme.find(params[:id])
+
+	end
+
 end

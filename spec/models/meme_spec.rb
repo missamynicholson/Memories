@@ -6,5 +6,4 @@ describe Meme, type: :model do
 		meme = Meme.create(raw_image_url: "")
 	  expect(meme.valid?).to eq false
 	end
-
 end
