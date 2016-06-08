@@ -1,7 +1,7 @@
 feature "viewing the memes" do
   before do
     meme = create :meme
-    meme2 = create :meme, top_caption: "Top2", id: 2, created_at: Time.new(2016,6,08)
+    meme2 = create :meme, top_caption: "Top2", id: 2, created_at: Time.new(2016,6,8)
   end
 
   scenario "shows a meme on the homepage" do
