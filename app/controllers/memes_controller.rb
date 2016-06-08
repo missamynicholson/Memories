@@ -10,7 +10,7 @@ class MemesController < ApplicationController
 	before_action :authenticate_user!, except: [:index]
 
 	def index
-		@memes = Meme.all
+		@memes = Meme.all(order: [:created_at.desc])
 	end
 
 	def get_images
