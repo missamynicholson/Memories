@@ -7,6 +7,8 @@ class MemesController < ApplicationController
 
 	include MemesHelper
 
+	before_action :authenticate_user!, except: [:index]
+
 	def index
 	end
 
@@ -19,7 +21,17 @@ class MemesController < ApplicationController
 
 	def new
 		@images = Search.current
-		# render the images on the page for the user to choose
-		# choose image
 	end
+
+	def create
+		meme = Meme.new(raw_image_url: params[:image_ref])
+		if meme.save
+			flash[:notice]='Image added to meme'
+			redirect_to edit_meme_path(meme.id)
+		else
+			flash[:alert]=meme.errors
+			redirect_to request.referer
+		end
+	end
+
 end
