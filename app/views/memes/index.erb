@@ -1,1 +1,7 @@
 <%= link_to 'Make meme', new_meme_path %>
+
+<% @memes.each do |meme| %>
+  <p><%= meme.raw_image_url %></p>
+  <p><%= meme.top_caption %></p>
+  <p><%= meme.bottom_caption %></p>
+<% end %>
