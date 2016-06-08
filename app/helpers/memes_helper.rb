@@ -4,6 +4,8 @@ module MemesHelper
 	end
 
 	def getty_request(search)
+		p "Here is the key...."
+		p ENV['GETTY_ACCESS_KEY']
 		url = URI.parse("https://api.gettyimages.com")
 		search_url = "/v3/search/images?fields=id,title,comp,referral_destinations&sort_order=best&phrase=#{search}"
 		req = Net::HTTP::Get.new(search_url)
