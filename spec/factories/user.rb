@@ -3,5 +3,6 @@ FactoryGirl.define do
     email "amy@gmail.com"
     username "amynic"
     password "testtest"
+    id 1
   end
 end
