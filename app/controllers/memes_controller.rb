@@ -10,6 +10,7 @@ class MemesController < ApplicationController
 	before_action :authenticate_user!, except: [:index]
 
 	def index
+		@memes = Meme.all
 	end
 
 	def get_images
@@ -40,14 +41,17 @@ class MemesController < ApplicationController
 
 	def update
 		meme = Meme.find(params[:id])
-		public_id = Cloudinary::Uploader.upload(meme.raw_image_url)["public_id"]
-		top = url_convert(params[:meme][:top_caption])
-		bottom = url_convert(params[:meme][:bottom_caption])
 
-		@transformed_url = Cloudinary::Uploader.upload(Cloudinary::Utils.cloudinary_url(public_id, :transformation => [
- 				{:overlay => "text:helvetica_40_bold:#{top}", 
-  			:gravity => :north }, {:overlay => "text:helvetica_40_bold:#{bottom}", :gravity => :south }] ))["url"]
+		transform_info = transform_image(meme, meme_params)
+		transformed_url = upload_image(transform_info)["url"]
+		meme.memeify(transformed_url)
+		flash[:notice]= "Woohoo! Meme added"
+		redirect_to memes_path
+	end
 
+	private
+	def meme_params
+		params.require(:meme).permit(:top_caption, :bottom_caption)
 	end
 
 end
