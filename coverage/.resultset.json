@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/image_search_spec.rb": [
+      "/Users/admin/Dropbox/projects/main_course/Week_9/Memeories/spec/features/image_search_spec.rb": [
         1,
         null,
         1,
@@ -18,7 +18,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/logging_in_out_spec.rb": [
+      "/Users/admin/Dropbox/projects/main_course/Week_9/Memeories/spec/features/logging_in_out_spec.rb": [
         1,
         1,
         4,
@@ -56,7 +56,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/signing_in_spec.rb": [
+      "/Users/admin/Dropbox/projects/main_course/Week_9/Memeories/spec/features/signing_in_spec.rb": [
         1,
         1,
         1,
@@ -101,7 +101,22 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/app/controllers/memes_controller.rb": [
+      "/Users/admin/Dropbox/projects/main_course/Week_9/Memeories/spec/features/viewing_memes_spec.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/admin/Dropbox/projects/main_course/Week_9/Memeories/app/controllers/memes_controller.rb": [
         1,
         1,
         1,
@@ -128,7 +143,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/app/models/search.rb": [
+      "/Users/admin/Dropbox/projects/main_course/Week_9/Memeories/app/models/search.rb": [
         1,
         1,
         2,
@@ -140,14 +155,14 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/app/controllers/application_controller.rb": [
+      "/Users/admin/Dropbox/projects/main_course/Week_9/Memeories/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/app/controllers/registrations_controller.rb": [
+      "/Users/admin/Dropbox/projects/main_course/Week_9/Memeories/app/controllers/registrations_controller.rb": [
         1,
         null,
         1,
@@ -157,6 +172,6 @@
         null
       ]
     },
-    "timestamp": 1465374116
+    "timestamp": 1465383983
   }
 }
