@@ -43,13 +43,11 @@ class MemesController < ApplicationController
 		public_id = Cloudinary::Uploader.upload(meme.raw_image_url)["public_id"]
 		top = url_convert(params[:meme][:top_caption])
 		bottom = url_convert(params[:meme][:bottom_caption])
-		transformed_url = Cloudinary::Utils.cloudinary_url(public_id, :transformation => [
-              { :overlay => "text:#{top}", 
-                :gravity => :north },
-              { :overlay => "text:#{bottom}", 
-              	:gravity => :south }
-             	])
-		Cloudinary::Uploader.upload(transformed_url)
+
+		@transformed_url = Cloudinary::Uploader.upload(Cloudinary::Utils.cloudinary_url(public_id, :transformation => [
+ 				{:overlay => "text:helvetica_40_bold:#{top}", 
+  			:gravity => :north }, {:overlay => "text:helvetica_40_bold:#{bottom}", :gravity => :south }] ))["url"]
+
 	end
 
 end
