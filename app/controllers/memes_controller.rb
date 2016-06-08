@@ -36,7 +36,20 @@ class MemesController < ApplicationController
 
 	def edit
 		@meme = Meme.find(params[:id])
+	end
 
+	def update
+		meme = Meme.find(params[:id])
+		public_id = Cloudinary::Uploader.upload(meme.raw_image_url)["public_id"]
+		top = url_convert(params[:meme][:top_caption])
+		bottom = url_convert(params[:meme][:bottom_caption])
+		transformed_url = Cloudinary::Utils.cloudinary_url(public_id, :transformation => [
+              { :overlay => "text:#{top}", 
+                :gravity => :north },
+              { :overlay => "text:#{bottom}", 
+              	:gravity => :south }
+             	])
+		Cloudinary::Uploader.upload(transformed_url)
 	end
 
 end

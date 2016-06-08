@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'Posting meme' do
   scenario 'Post image' do
+    allow(Cloudinary::Uploader).to receive(:upload).and_return({image_url:'test'})
 		sign_up
 		search
     click_link('0')

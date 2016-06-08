@@ -59,3 +59,4 @@ group :development do
 end
 
 gem 'ConnectSDK', '~> 1.0.2.Beta'
+gem 'cloudinary'
