@@ -117,6 +117,25 @@
         null,
         null
       ],
+      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/spec/models/meme_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/app/models/meme.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
       "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/app/controllers/memes_controller.rb": [
         1,
         1,
@@ -183,12 +202,8 @@
         null,
         null,
         null
-      ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/app/models/meme.rb": [
-        1,
-        null
       ]
     },
-    "timestamp": 1465379742
+    "timestamp": 1465382735
   }
 }
