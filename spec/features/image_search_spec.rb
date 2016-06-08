@@ -12,4 +12,11 @@ feature 'image search' do
 		expect(page).to have_css("img[src*='testimageuri']")
 	end
 
+  scenario 'user can select an image' do
+    search
+    click_link('1')
+    expect(page).to have_content("Image added to meme.")
+    expect(Meme.all.count).to equal(1)
+  end
+
 end
