@@ -1,0 +1,9 @@
+<%= image_tag @meme.raw_image_url %>
+
+<%= form_for @meme do |f| %>
+    <%= f.label :top_caption %>
+    <%= f.text_field :top_caption %>
+    <%= f.label :bottom_caption %>
+    <%= f.text_field :bottom_caption %>
+    <%= f.submit %>
+<% end %>

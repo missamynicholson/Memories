@@ -5,13 +5,13 @@ feature 'image search' do
 	scenario 'logged in user can search for images and see the results on the page' do
 		sign_up
 		search
-		expect(page).to have_css("img[src*='testimageuri']")
+		expect(page).to have_css("img[src*='http://google.com/images/test']")
 	end
 
 	scenario 'logged in user can search using more than one word' do
 		sign_up
 		search(searchterm: 'Angry dog')
-		expect(page).to have_css("img[src*='testimageuri']")
+		expect(page).to have_css("img[src*='http://google.com/images/test']")
 	end
 
   scenario 'logged in user can select an image' do
