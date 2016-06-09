@@ -20,4 +20,19 @@ module MemesHelper
 		response = JSON.parse(response.body)
 		response = response["images"].map{ |image| image["display_sizes"][0]["uri"]}
 	end
+
+	def upload_image(raw_image_url)
+		Cloudinary::Uploader.upload(raw_image_url)
+	end
+
+	def transform_image(meme, meme_params)
+		public_id = upload_image(meme.raw_image_url)["public_id"]
+		url_top = url_convert(meme_params[:top_caption])
+		url_bottom = url_convert(meme_params[:bottom_caption])
+		Cloudinary::Utils.cloudinary_url(public_id, :transformation => [
+				{:overlay => "text:helvetica_40_bold:#{url_top}",
+				:gravity => :north },
+				{:overlay => "text:helvetica_40_bold:#{url_bottom}",
+				:gravity => :south }])
+	end
 end
