@@ -1,6 +1,21 @@
-<%= link_to 'Make meme', new_meme_path %>
 
-<form action="/slack/sending" method=GET>
-  <input type="hidden" name='text' value="https://s-media-cache-ak0.pinimg.com/736x/fe/cc/d7/feccd77661ea5f0327162e0fc05e876c.jpg">
-  <input type="submit" value="Share on Slack">
-</form>
+<% @memes.each_slice(3).each do |group| %>
+  <div style="text-align:center" class="row">
+  <% group.each do |meme| %>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <%= image_tag(meme.image.url) %>
+          <form action="/slack/sending" method=GET>
+            <input type="hidden" name='text' value= <%= meme.image.url %>>
+            <input type="submit" value="Share on Slack">
+          </form>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <br>
+<% end %>
