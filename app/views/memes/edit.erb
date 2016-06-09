@@ -1,9 +1,19 @@
-<%= image_tag @meme.raw_image_url %>
-
-<%= form_for @meme do |f| %>
-    <%= f.label :top_caption %>
-    <%= f.text_field :top_caption %>
-    <%= f.label :bottom_caption %>
-    <%= f.text_field :bottom_caption %>
-    <%= f.submit %>
-<% end %>
+<div style="text-align:center" class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <%= form_for @meme do |f| %>
+      <%= f.label :top_caption %>
+      <%= f.text_field :top_caption, :size => 48 %>
+      <br>
+      <%= image_tag @meme.raw_image_url %>
+      <br>
+      <%= f.label :bottom_caption %>
+      <%= f.text_field :bottom_caption, :size => 45 %>
+      <br><br>
+      <%= f.submit %>
+    <% end %>
+    <br><br>
+    <%= link_to "Cancel", meme_path(@meme.id), method: :delete %>
+  </div>
+  <div class="col-md-3"></div>
+</div>

@@ -3,7 +3,8 @@ require 'erb'
 module MemesHelper
 
 	def url_convert(string)
-		ERB::Util.url_encode(string)
+		encoded_string = ERB::Util.url_encode(string)
+		encoded_string.gsub(/,/,'%E2%80%9A')
 	end
 
 	def getty_request(search)

@@ -1,7 +1,7 @@
 class SlackController < ApplicationController
 
   def sending
-    if params[:codeword].downcase == 'makers'
+    if params[:codeword].downcase == ENV['CODE_WORD']
       flash[:notice]='Correct codeword'
       url = URI.parse("https://hooks.slack.com")
       http = Net::HTTP.new(url.host, url.port)
