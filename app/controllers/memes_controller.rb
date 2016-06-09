@@ -24,7 +24,7 @@ class MemesController < ApplicationController
 	end
 
 	def create
-		meme = Meme.new(raw_image_url: params[:image_ref])
+		@meme = current_user.memes.build(raw_image_url: params[:image_ref])
 		if meme.save
 			flash[:notice]='Image added to meme'
 			redirect_to edit_meme_path(meme.id)
