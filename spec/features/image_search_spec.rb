@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 feature 'image search' do
 
 	scenario 'logged in user can search for images and see the results on the page' do
@@ -26,6 +24,15 @@ feature 'image search' do
     visit('/')
 		click_link('Make meme')
     expect(current_path).to eq(new_user_session_path)
+  end
+
+	scenario "can't create the meme (for some unknown reason)" do
+    allow_any_instance_of(Meme).to receive(:save).and_return false
+		sign_up
+    search
+    click_link('0')
+    expect(page).to have_content("Uh oh! Couldn't create your meme!")
+    expect(Meme.all.count).to equal(0)
   end
 
 end
