@@ -29,11 +29,15 @@ module MemesHelper
 		public_id = upload_image(meme.raw_image_url)["public_id"]
 		url_top = url_convert(meme_params[:top_caption])
 		url_bottom = url_convert(meme_params[:bottom_caption])
-		Cloudinary::Utils.cloudinary_url(public_id, :transformation => [
+		Cloudinary::Utils.cloudinary_url(public_id, transform_settings(url_top,url_bottom))
+	end
+
+	def transform_settings(url_top,url_bottom)
+		{:transformation => [
 				{:overlay => "text:helvetica_35_bold_line_spacing_0_center_stroke:#{url_top}", :color => "white", :border=>"5px_solid_black",
-				:gravity => :north, :crop => "fit", :width => 300 },
+				:gravity => :north, :crop => "fit", :width => 320 },
 				{:overlay => "text:helvetica_35_bold_line_spacing_0_center_stroke:#{url_bottom}", :color => "white", :border=>"5px_solid_black",
-				:gravity => :south, :crop => "fit", :width => 300 }])
+				:gravity => :south, :crop => "fit", :width => 320 }]}
 	end
 
 end
