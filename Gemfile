@@ -24,6 +24,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+gem 'aws-sdk', '>= 2.0.34'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -59,3 +63,4 @@ group :development do
 end
 
 gem 'ConnectSDK', '~> 1.0.2.Beta'
+gem 'cloudinary'
