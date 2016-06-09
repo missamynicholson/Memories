@@ -1,6 +1,9 @@
+require 'erb'
+
 module MemesHelper
+
 	def url_convert(string)
-		string.gsub(/ /,'%20')
+		ERB::Util.url_encode(string)
 	end
 
 	def getty_request(search)
