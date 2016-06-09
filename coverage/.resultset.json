@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/image_search_spec.rb": [
+      "/Users/adams/Ronin/Memeories/spec/features/image_search_spec.rb": [
         1,
         null,
         1,
@@ -34,7 +34,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/logging_in_out_spec.rb": [
+      "/Users/adams/Ronin/Memeories/spec/features/logging_in_out_spec.rb": [
         1,
         1,
         4,
@@ -71,7 +71,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/posting_meme_spec.rb": [
+      "/Users/adams/Ronin/Memeories/spec/features/posting_meme_spec.rb": [
         1,
         null,
         1,
@@ -97,7 +97,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/signing_in_spec.rb": [
+      "/Users/adams/Ronin/Memeories/spec/features/signing_in_spec.rb": [
         1,
         1,
         1,
@@ -142,7 +142,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/viewing_memes_spec.rb": [
+      "/Users/adams/Ronin/Memeories/spec/features/viewing_memes_spec.rb": [
         1,
         1,
         3,
@@ -172,7 +172,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/models/meme_spec.rb": [
+      "/Users/adams/Ronin/Memeories/spec/models/meme_spec.rb": [
         1,
         null,
         1,
@@ -195,7 +195,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/app/models/meme.rb": [
+      "/Users/adams/Ronin/Memeories/app/models/meme.rb": [
         1,
         null,
         1,
@@ -209,7 +209,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/app/controllers/memes_controller.rb": [
+      "/Users/adams/Ronin/Memeories/app/controllers/memes_controller.rb": [
         1,
         1,
         1,
@@ -267,7 +267,7 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/app/models/search.rb": [
+      "/Users/adams/Ronin/Memeories/app/models/search.rb": [
         1,
         1,
         4,
@@ -279,14 +279,14 @@
         null,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/app/controllers/application_controller.rb": [
+      "/Users/adams/Ronin/Memeories/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/amynicholson/Documents/MAKERS/Memeories/app/controllers/registrations_controller.rb": [
+      "/Users/adams/Ronin/Memeories/app/controllers/registrations_controller.rb": [
         1,
         null,
         1,
@@ -296,6 +296,6 @@
         null
       ]
     },
-    "timestamp": 1465469237
+    "timestamp": 1465470805
   }
 }

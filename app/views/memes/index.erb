@@ -1,3 +1,4 @@
+
 <% @memes.each_slice(3).each do |group| %>
   <div style="text-align:center" class="row">
   <% group.each do |meme| %>
@@ -6,6 +7,10 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
           <%= image_tag(meme.image.url) %>
+          <form action="/slack/sending" method=GET>
+            <input type="hidden" name='text' value= <%= meme.image.url %>>
+            <input type="submit" value="Share on Slack">
+          </form>
         </div>
         <div class="col-md-1"></div>
       </div>
