@@ -38,7 +38,6 @@ gem 'aws-sdk', '>= 2.0.34'
 # gem 'capistrano-rails', group: :development
 
 group :test do
-  gem 'dotenv-rails', '~> 2.1.1'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'rspec-collection_matchers'
@@ -52,6 +51,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'dotenv-rails', '~> 2.1.1'
 end
 
 group :development do

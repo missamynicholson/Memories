@@ -1,4 +1,17 @@
 <%= link_to 'Make meme', new_meme_path %>
-<% @memes.each do |meme| %>
-  <%= image_tag(meme.image.url)%>
-<%end%>
+<% @memes.each_slice(3).each do |group| %>
+  <div style="text-align:center" class="row">
+  <% group.each do |meme| %>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <%= image_tag(meme.image.url) %>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <br>
+<% end %>

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/spec/features/image_search_spec.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/image_search_spec.rb": [
         1,
         null,
         1,
@@ -34,7 +34,7 @@
         null,
         null
       ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/spec/features/logging_in_out_spec.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/logging_in_out_spec.rb": [
         1,
         1,
         4,
@@ -71,7 +71,7 @@
         null,
         null
       ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/spec/features/posting_meme_spec.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/posting_meme_spec.rb": [
         1,
         null,
         1,
@@ -97,7 +97,7 @@
         null,
         null
       ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/spec/features/signing_in_spec.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/signing_in_spec.rb": [
         1,
         1,
         1,
@@ -142,7 +142,30 @@
         null,
         null
       ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/spec/models/meme_spec.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/features/viewing_memes_spec.rb": [
+        1,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/amynicholson/Documents/MAKERS/Memeories/spec/models/meme_spec.rb": [
         1,
         null,
         1,
@@ -165,7 +188,7 @@
         null,
         null
       ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/app/models/meme.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/app/models/meme.rb": [
         1,
         null,
         1,
@@ -179,7 +202,7 @@
         null,
         null
       ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/app/controllers/memes_controller.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/app/controllers/memes_controller.rb": [
         1,
         1,
         1,
@@ -192,7 +215,7 @@
         1,
         null,
         1,
-        30,
+        32,
         null,
         null,
         1,
@@ -237,7 +260,7 @@
         null,
         null
       ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/app/models/search.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/app/models/search.rb": [
         1,
         1,
         4,
@@ -249,14 +272,14 @@
         null,
         null
       ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/app/controllers/application_controller.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/olliehaydon-mulligan/Documents/Coding/week9/Memeories/app/controllers/registrations_controller.rb": [
+      "/Users/amynicholson/Documents/MAKERS/Memeories/app/controllers/registrations_controller.rb": [
         1,
         null,
         1,
@@ -266,6 +289,6 @@
         null
       ]
     },
-    "timestamp": 1465464897
+    "timestamp": 1465467091
   }
 }
