@@ -41,7 +41,6 @@ class MemesController < ApplicationController
 
 	def update
 		meme = Meme.find(params[:id])
-
 		transform_info = transform_image(meme, meme_params)
 		transformed_url = upload_image(transform_info)["url"]
 		meme.memeify(transformed_url)

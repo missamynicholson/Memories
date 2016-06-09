@@ -7,8 +7,11 @@ describe Meme, type: :model do
 	  expect(meme.valid?).to eq false
 	end
 
-	it" should return the memeified image" do
+	it "should return the memeified image" do
+		meme = Meme.create(raw_image_url: "http://google.com/images/test")
+		allow(URI).to receive(:parse).and_return((Rails.root + 'spec/files/images/confused_dog.png').open)
 		meme.memeify("url")
-		expect(meme.image).to eq
+		expect(meme.image.path).to match(/confused_dog.png/)
 	end
+	
 end
