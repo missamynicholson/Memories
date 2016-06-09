@@ -1,7 +1,9 @@
 feature "viewing the memes" do
   before do
-    meme = Meme.create(raw_image_url: "url", image: (Rails.root + 'spec/files/images/confused_dog.png').open, created_at: Time.new(2016,6,7))
-    meme1 = Meme.create(raw_image_url: "url", image: (Rails.root + 'spec/files/images/master-branch.jpg').open, created_at: Time.new(2016,6,8))
+    sign_up
+    user = create :user
+    meme = Meme.create(raw_image_url: "url", image: (Rails.root + 'spec/files/images/confused_dog.png').open, created_at: Time.new(2016,6,7), user: user)
+    meme1 = Meme.create(raw_image_url: "url", image: (Rails.root + 'spec/files/images/master-branch.jpg').open, created_at: Time.new(2016,6,8), user: user)
   end
 
   after do

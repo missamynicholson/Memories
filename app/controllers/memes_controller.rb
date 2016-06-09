@@ -25,12 +25,12 @@ class MemesController < ApplicationController
 	end
 
 	def create
-		meme = Meme.new(raw_image_url: params[:image_ref])
-		if meme.save
+		@meme = current_user.memes.build(raw_image_url: image_params[:image_ref])
+		if @meme.save
 			flash[:notice]='Image added to meme'
-			redirect_to edit_meme_path(meme.id)
+			redirect_to edit_meme_path(@meme.id)
 		else
-			flash[:alert]=meme.errors
+			flash[:alert]=@meme.errors
 			redirect_to request.referer
 		end
 	end
@@ -51,6 +51,10 @@ class MemesController < ApplicationController
 	private
 	def meme_params
 		params.require(:meme).permit(:top_caption, :bottom_caption)
+	end
+
+	def image_params
+		params.permit(:image_ref)
 	end
 
 end

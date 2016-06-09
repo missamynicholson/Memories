@@ -6,6 +6,10 @@ describe Meme, type: :model do
 		remove_uploaded_file
 	end
 
+	it "has correct association with user" do
+      should belong_to :user
+    end
+
 	it "should validate presence of raw_image_url" do
 		meme = Meme.create(raw_image_url: "")
 	  expect(meme.valid?).to eq false
