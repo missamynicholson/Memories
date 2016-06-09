@@ -9,12 +9,14 @@
           <%= image_tag(meme.image.url) %>
           <br>
           <p>by <%= meme.user.username %>
-          <form action="/slack/sending" method=GET>
-            <input type="hidden" name='text' value= "<%='Sent by ' + current_user.username%> <%= meme.image.url%>">
-            <input type="text" name='codeword' placeholder="Code Word">
-            <input type="submit" value="Share on Slack">
-          </form>
-          <br>
+          <% if current_user %>
+            <form action="/slack/sending" method=GET>
+              <input type="hidden" name='text' value= "<%='Sent by ' + current_user.username%> <%= meme.image.url%>">
+              <input type="text" name='codeword' placeholder="Code Word">
+              <input type="submit" value="Share on Slack">
+            </form>
+            <br>
+          <% end %>
           <% if current_user == meme.user %>
             <%= link_to "Delete", meme_path(meme.id), method: :delete %>
           <% end %>
