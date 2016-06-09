@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe Meme, type: :model do
 
+	after do
+		remove_uploaded_file
+	end
+
 	it "should validate presence of raw_image_url" do
 		meme = Meme.create(raw_image_url: "")
 	  expect(meme.valid?).to eq false
@@ -13,5 +17,5 @@ describe Meme, type: :model do
 		meme.memeify("url")
 		expect(meme.image.path).to match(/confused_dog.png/)
 	end
-	
+
 end

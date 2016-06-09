@@ -1,3 +1,5 @@
+require 'fileutils'
+
 def search(searchterm:'Dogs')
 	url_search = searchterm.gsub(/ /,'%20')
 	json_response = {'images' => [{'display_sizes' => [{'uri' => 'http://google.com/images/test'}]}]}.to_json
@@ -27,4 +29,8 @@ def sign_up(username = "myUsername")
 	fill_in("Password", with: "testtest")
 	fill_in("Password confirmation", with: "testtest")
 	click_button("Sign up")
+end
+
+def remove_uploaded_file
+	FileUtils.rm_rf(Rails.root + "public/system")
 end

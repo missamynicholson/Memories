@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'Posting meme' do
 
+	after do
+		remove_uploaded_file
+	end
+
   scenario 'user can update a meme to add a memeified image' do
     allow(Cloudinary::Uploader).to receive(:upload).and_return({"test_url" => 'test',"public_id" => 'test_id'})
 		allow(Cloudinary::Utils).to receive(:cloudinary_url).and_return('transform_info')
