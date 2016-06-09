@@ -30,7 +30,6 @@ feature "login and logout" do
       click_link "Logout"
       expect(page).not_to have_link "Logout"
       expect(page).to have_link "Login"
-      #when not logged in, shouldn't be able to create a new meme
     end
   end
 end

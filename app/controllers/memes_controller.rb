@@ -35,4 +35,22 @@ class MemesController < ApplicationController
 		end
 	end
 
+	def edit
+		@meme = Meme.find(params[:id])
+	end
+
+	def update
+		meme = Meme.find(params[:id])
+		transform_info = transform_image(meme, meme_params)
+		transformed_url = upload_image(transform_info)["url"]
+		meme.memeify(transformed_url)
+		flash[:notice]= "Woohoo! Meme added"
+		redirect_to memes_path
+	end
+
+	private
+	def meme_params
+		params.require(:meme).permit(:top_caption, :bottom_caption)
+	end
+
 end
