@@ -1,6 +1,9 @@
+require 'erb'
+
 module MemesHelper
+
 	def url_convert(string)
-		string.gsub(/ /,'%20').gsub('?', '%3F')
+		ERB::Util.url_encode(string)
 	end
 
 	def getty_request(search)
@@ -29,10 +32,15 @@ module MemesHelper
 		public_id = upload_image(meme.raw_image_url)["public_id"]
 		url_top = url_convert(meme_params[:top_caption])
 		url_bottom = url_convert(meme_params[:bottom_caption])
-		Cloudinary::Utils.cloudinary_url(public_id, :transformation => [
-				{:overlay => "text:helvetica_40_bold:#{url_top}",
-				:gravity => :north },
-				{:overlay => "text:helvetica_40_bold:#{url_bottom}",
-				:gravity => :south }])
+		Cloudinary::Utils.cloudinary_url(public_id, transform_settings(url_top,url_bottom))
 	end
+
+	def transform_settings(url_top,url_bottom)
+		{:transformation => [
+				{:overlay => "text:helvetica_35_bold_line_spacing_0_center_stroke:#{url_top}", :color => "white", :border=>"5px_solid_black",
+				:gravity => :north, :crop => "fit", :width => 320 },
+				{:overlay => "text:helvetica_35_bold_line_spacing_0_center_stroke:#{url_bottom}", :color => "white", :border=>"5px_solid_black",
+				:gravity => :south, :crop => "fit", :width => 320 }]}
+	end
+
 end
