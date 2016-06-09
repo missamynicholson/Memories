@@ -11,7 +11,7 @@ production:
   enhance_image_tag: true
   static_image_support: true
 test:
-  cloud_name: <%=ENV['CLOUD_NAME']%>
+  cloud_name: dv9revqig
   api_key: <%=ENV['CLOUD_KEY']%>
   api_secret: <%=ENV['CLOUD_SECRET']%>
   enhance_image_tag: true
