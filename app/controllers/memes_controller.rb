@@ -8,6 +8,8 @@ class MemesController < ApplicationController
 	include MemesHelper
 
 	before_action :authenticate_user!, except: [:index]
+	before_action :set_meme, only: [:edit, :update, :destroy]
+	before_action :owned_meme, only: :destroy
 
 	def index
 		@memes = Meme.all.order('created_at DESC')
@@ -30,22 +32,31 @@ class MemesController < ApplicationController
 			flash[:notice]='Image added to meme'
 			redirect_to edit_meme_path(@meme.id)
 		else
-			flash[:alert]=@meme.errors
+			flash[:alert]= "Uh oh! Couldn't create your meme!"
 			redirect_to request.referer
 		end
 	end
 
 	def edit
-		@meme = Meme.find(params[:id])
+		@meme
 	end
 
 	def update
-		meme = Meme.find(params[:id])
-		transform_info = transform_image(meme, meme_params)
+		transform_info = transform_image(@meme, meme_params)
 		transformed_url = upload_image(transform_info)["url"]
-		meme.memeify(transformed_url)
+		@meme.memeify(transformed_url)
 		flash[:notice]= "Woohoo! Meme added"
 		redirect_to memes_path
+	end
+
+	def destroy
+		if @meme.destroy
+      flash[:notice] = "Your meme was successfully deleted!"
+      redirect_to memes_path
+    else
+      flash[:alert] = "Uh oh! Couldn't delete your meme!"
+      redirect_to memes_path
+    end
 	end
 
 	private
@@ -56,5 +67,16 @@ class MemesController < ApplicationController
 	def image_params
 		params.permit(:image_ref)
 	end
+
+	def owned_meme
+    unless @meme.user == current_user
+      flash[:alert] = "That meme doesn't belong to you!"
+      redirect_to root_path
+    end
+  end
+
+	def set_meme
+    @meme = Meme.find(params[:id])
+  end
 
 end

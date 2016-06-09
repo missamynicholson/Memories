@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 feature 'Posting meme' do
 
 	after do

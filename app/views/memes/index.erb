@@ -13,6 +13,10 @@
             <input type="hidden" name='text' value= <%= meme.image.url %>>
             <input type="submit" value="Share on Slack">
           </form>
+          <br>
+          <% if current_user == meme.user %>
+            <%= link_to "Delete", meme_path(meme.id), method: :delete %>
+          <% end %>
         </div>
         <div class="col-md-1"></div>
       </div>
