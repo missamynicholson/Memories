@@ -18,6 +18,7 @@ feature 'Posting meme' do
     allow_any_instance_of(Meme).to receive(:memeify).and_return(meme.image = (Rails.root + 'spec/files/images/confused_dog.png').open)
     click_button("Update Meme")
     expect(page).to have_content("Woohoo! Meme added")
+		expect(page).to have_content("by myUsername")
     expect(meme.image.url).to match(/confused_dog.png/)
 	end
 
