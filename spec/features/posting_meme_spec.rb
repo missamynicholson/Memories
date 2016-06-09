@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Posting meme' do
 
 	after do
-		remove_uploaded_files
+		remove_uploaded_file
 	end
 
   scenario 'user can update a meme to add a memeified image' do
