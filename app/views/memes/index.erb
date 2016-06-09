@@ -10,7 +10,8 @@
           <br>
           <p>by <%= meme.user.username %>
           <form action="/slack/sending" method=GET>
-            <input type="hidden" name='text' value= <%= meme.image.url %>>
+            <input type="hidden" name='text' value= "<%='Sent by ' + current_user.username%> <%= meme.image.url%>">
+            <input type="text" name='codeword' placeholder="Code Word">
             <input type="submit" value="Share on Slack">
           </form>
         </div>

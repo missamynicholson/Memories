@@ -1,6 +1,6 @@
 module MemesHelper
 	def url_convert(string)
-		string.gsub(/ /,'%20')
+		string.gsub(/ /,'%20').gsub('?', '%3F')
 	end
 
 	def getty_request(search)
