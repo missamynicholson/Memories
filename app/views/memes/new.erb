@@ -1,6 +1,6 @@
 <div style="text-align:center">
   <%= form_tag("/memes/new", method: "post") do %>
-    <%= label_tag(:search, "Search for:") %>
+    <%= label_tag(:search, "Search for image:") %>
     <%= text_field_tag(:search) %>
     <%= submit_tag("Search") %>
   <% end %>

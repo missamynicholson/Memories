@@ -14,7 +14,7 @@ feature 'Posting meme' do
     fill_in("Bottom caption", with: "Bye Adam")
     meme = Meme.find_by(raw_image_url: 'http://google.com/images/test')
     allow_any_instance_of(Meme).to receive(:memeify).and_return(meme.image = (Rails.root + 'spec/files/images/confused_dog.png').open)
-    click_button("Update Meme")
+    click_button("Create")
     expect(page).to have_content("Woohoo! Meme added")
 		expect(page).to have_content("by myUsername")
     expect(meme.image.url).to match(/confused_dog.png/)
