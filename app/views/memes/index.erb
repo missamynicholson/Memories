@@ -10,8 +10,6 @@
         <div class="col-md-4"></div>
           <div style="text-color:#000000; background-color:#fff" class="col-md-4">
         <h4>by <br><%= meme.user.username %></h4>
-        <a style="background-color:#fff;" href="#" id="showSlack">Slack it</a>
-        <br>
         <% if current_user == meme.user %>
           <a style="background-color:#fff"><%= link_to "Delete", meme_path(meme.id), method: :delete %></a>
         <% end %>
@@ -20,7 +18,7 @@
       </div>
       <br>
       <% if current_user %>
-        <form id="slackForm" style="display:none" action="/slack/sending" method=GET>
+        <form action="/slack/sending" method=GET>
           <input type="hidden" name='text' value= "<%='Sent by ' + current_user.username%> <%= meme.image.url%>">
           <input type="text" name='codeword' placeholder="Code Word">
           <br>
