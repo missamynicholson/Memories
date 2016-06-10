@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/missamynicholson/Memeories.svg?branch=master)](https://travis-ci.org/missamynicholson/Memeories)
+[![Coverage Status](https://coveralls.io/repos/github/missamynicholson/Memeories/badge.svg?branch=master)](https://coveralls.io/github/missamynicholson/Memeories?branch=master)
+
 # Memeories
 
 ## Introduction
