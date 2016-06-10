@@ -4,7 +4,7 @@ module MemesHelper
 
 	def url_convert(string)
 		encoded_string = ERB::Util.url_encode(string)
-		encoded_string.gsub(/,/,'%E2%80%9A')
+		encoded_string.gsub('%2C','%252C')
 	end
 
 	def getty_request(search)
