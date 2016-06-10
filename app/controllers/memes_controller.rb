@@ -12,7 +12,7 @@ class MemesController < ApplicationController
 	before_action :owned_meme, only: :destroy
 
 	def index
-		@memes = Meme.all.order('created_at DESC')
+		@memes = Meme.all.order('created_at DESC').page(params[:page])
 	end
 
 	def get_images

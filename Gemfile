@@ -64,3 +64,4 @@ end
 
 gem 'ConnectSDK', '~> 1.0.2.Beta'
 gem 'cloudinary'
+gem 'kaminari', '~> 0.16.3'
