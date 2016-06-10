@@ -55,7 +55,7 @@ You can not delete memes that were created by other users.
 
 
 ## Screenshot
-
+![Homepage](spec/files/images/screenshot_cow_dog.png)
 
 
 ## Tech used
