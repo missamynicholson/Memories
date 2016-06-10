@@ -1,21 +1,22 @@
+<div class="background">
+  <div class="content">
 <% @memes.each do |meme| %>
   <div style="text-align:center" class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
       <%= image_tag(meme.image.url) %>
-      <br>
-      <div style="text-align:center" class="row">
-        <div style="text-align:right" class="col-md-3">
-          <a href="#" id="showSlack">Slack it</a>
+
+      <div style="text-align:center;" class="row">
+        <div class="col-md-4"></div>
+          <div style="text-color:#000000; background-color:#fff" class="col-md-4">
+        <h4>by <br><%= meme.user.username %></h4>
+        <a style="background-color:#fff;" href="#" id="showSlack">Slack it</a>
+        <br>
+        <% if current_user == meme.user %>
+          <a style="background-color:#fff"><%= link_to "Delete", meme_path(meme.id), method: :delete %></a>
+        <% end %>
         </div>
-        <div class="col-md-6">
-          <h4>by <br><%= meme.user.username %></h4>
-        </div>
-        <div class="col-md-3" style="text-align:left">
-          <% if current_user == meme.user %>
-            <%= link_to "Delete", meme_path(meme.id), method: :delete %>
-          <% end %>
-        </div>
+          <div class="col-md-4"></div>
       </div>
       <br>
       <% if current_user %>
@@ -32,4 +33,9 @@
   </div>
   <br><br>
 <% end %>
-<%= paginate @memes %>
+
+<div style="text-align:center; background-color:#ffffff">
+  <%= paginate @memes %>
+</div>
+</div>
+</div>
