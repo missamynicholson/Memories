@@ -7,7 +7,7 @@ class SlackController < ApplicationController
       http = Net::HTTP.new(url.host, url.port)
       http.use_ssl = true
       request = Net::HTTP::Post.new(ENV['SLACK_HOOK'], {'Content-Type' =>'application/json'})
-      request.body = {"text" => params[:text]}.to_json
+      request.body = {"username" => "Memeories", "icon_url" => "http://res.cloudinary.com/dv9revqig/image/upload/v1465558784/logo_graphicv2_srrvsc.jpg", "text" => params[:text]}.to_json
       response = http.request(request)
       redirect_to '/'
     else
